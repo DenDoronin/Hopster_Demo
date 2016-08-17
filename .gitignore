@@ -1,0 +1,55 @@
+# Xcode
+# Den says:
+# This is completed version based on community practices and own experience
+.xcodeproj/*
+!*.xcodeproj/*.pbxproj
+!*.xcodeproj/xcshareddata
+
+.xcworkspace/*
+!*.xcworkspace/*.xcworkspacedata
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xcuserstate
+
+## Other
+*.moved-aside
+*.xcuserstate
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+Packages/
+.build/
+
+# CocoaPods
+#
+# Den says:
+# Some developers recommend against adding the Pods directory to .gitignore. However
+# I prefer the way described in http://stackoverflow.com/a/22350027/2382237
+# My opinion, it’s important to have the fully worked codebase with exactly version of installed libraries
+# So, working with project will look like in as simple as download-build-run
+#
+# Pods/
+
