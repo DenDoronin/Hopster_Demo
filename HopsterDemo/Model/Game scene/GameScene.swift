@@ -80,7 +80,7 @@ class GameScene: NSObject {
     }
     
     func handleSingleTap() {
-        
+        self.objectManager?.player?.jump()
     }
     
     func handleDoubleTap() {
@@ -88,18 +88,18 @@ class GameScene: NSObject {
     }
     
     func handleSwipeLeft() {
-        
+        self.objectManager?.player?.moveLeft()
     }
     
     func handleSwipeRight() {
-        
+        self.objectManager?.player?.moveRight()
     }
     
     func handleSwipeUp() {
-        
+        self.objectManager?.player?.moveUp()
     }
     
     func handleSwipeDown() {
-        
+        self.objectManager?.player?.moveDown()
     }
 }

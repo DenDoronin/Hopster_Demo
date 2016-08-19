@@ -10,6 +10,7 @@ import UIKit
 
 class GameObjectsManager: NSObject {
 
+    weak var player: GameObject?
     var objects: [GameObject] = []
     
     func objectDidChangeState(object: GameObject!) {
@@ -17,6 +18,14 @@ class GameObjectsManager: NSObject {
     }
     
     func addObject(anObject: GameObject) {
+        if anObject.isPlayer {
+            // drop previous player
+            if (self.player != nil && anObject != self.player) {
+                self.player!.isPlayer = false
+            }
+            
+            self.player = anObject
+        }
         objects.append(anObject)
     }
     
@@ -25,4 +34,5 @@ class GameObjectsManager: NSObject {
             self.objects.removeAtIndex(index)
         }
     }
+    
 }
