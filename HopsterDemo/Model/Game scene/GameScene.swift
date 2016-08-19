@@ -17,11 +17,20 @@ enum GameSceneEvents {
     case GameSceneEventSwipeDown
 }
 
+protocol GameSceneRenderDelegate {
+
+    func renderObjectFromManager(anObjectManager: GameObjectsManager)
+    
+}
+
+
 class GameScene: NSObject {
 
     var physicsEngine: PhysicsEngine?
     var logicEngine  : AIEngine?
     var objectManager: GameObjectsManager?
+    
+    var renderer: GameSceneRenderDelegate?
     
     var gameSceneTimer: NSTimer!
     var gameSceneUpdateInerval: NSTimeInterval = 0.1  {
@@ -33,14 +42,18 @@ class GameScene: NSObject {
         }
         }
     }
-    override init()
+    init(aRenderer: GameSceneRenderDelegate)
     {
+        
         super.init()
         self.objectManager = GameObjectsManager()
         self.physicsEngine = PhysicsEngine(anObjectManager: self.objectManager!)
         self.logicEngine = AIEngine(anObjectManager: self.objectManager!)
         
-        self.gameSceneTimer = NSTimer.scheduledTimerWithTimeInterval(self.gameSceneUpdateInerval, target: self, selector: #selector(GameScene.update), userInfo: nil, repeats: true)
+        self.gameSceneTimer = NSTimer.scheduledTimerWithTimeInterval(self.gameSceneUpdateInerval,
+                                                                     target: self,
+                                                                     selector: #selector(update),
+                                                                     userInfo: nil, repeats: true)
     }
     
     func populateScene () {
