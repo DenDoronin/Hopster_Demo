@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		813747A51D64E44D0022CF92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813747A41D64E44D0022CF92 /* AppDelegate.swift */; };
-		813747A71D64E44D0022CF92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813747A61D64E44D0022CF92 /* ViewController.swift */; };
 		813747AA1D64E44D0022CF92 /* HopsterDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 813747A81D64E44D0022CF92 /* HopsterDemo.xcdatamodeld */; };
 		813747AD1D64E44D0022CF92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813747AB1D64E44D0022CF92 /* Main.storyboard */; };
 		813747AF1D64E44D0022CF92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813747AE1D64E44D0022CF92 /* Assets.xcassets */; };
 		813747BA1D64E44D0022CF92 /* HopsterDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813747B91D64E44D0022CF92 /* HopsterDemoTests.swift */; };
 		813747C51D64E44D0022CF92 /* HopsterDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813747C41D64E44D0022CF92 /* HopsterDemoUITests.swift */; };
+		813748081D661B0F0022CF92 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748071D661B0F0022CF92 /* MenuController.swift */; };
+		8137480A1D661B230022CF92 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748091D661B230022CF92 /* MenuView.swift */; };
+		8137480C1D661C230022CF92 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137480B1D661C230022CF92 /* MenuModel.swift */; };
+		8137480F1D6625050022CF92 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137480E1D6625050022CF92 /* GameView.swift */; };
+		813748111D66251B0022CF92 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748101D66251B0022CF92 /* GameController.swift */; };
+		813748151D66256C0022CF92 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748141D66256C0022CF92 /* GameScene.swift */; };
+		813748171D6625AF0022CF92 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748161D6625AF0022CF92 /* GameModel.swift */; };
+		813748191D662B280022CF92 /* PhysicsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748181D662B280022CF92 /* PhysicsEngine.swift */; };
+		8137481B1D662B3D0022CF92 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137481A1D662B3D0022CF92 /* AIEngine.swift */; };
+		8137481D1D662BC80022CF92 /* GameObjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137481C1D662BC80022CF92 /* GameObjectsManager.swift */; };
+		813748201D662C250022CF92 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137481F1D662C250022CF92 /* GameObject.swift */; };
+		813748681D675DA50022CF92 /* PhysicsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748671D675DA50022CF92 /* PhysicsObject.swift */; };
+		8137486A1D675EA20022CF92 /* AIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748691D675EA20022CF92 /* AIObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,6 @@
 /* Begin PBXFileReference section */
 		813747A11D64E44D0022CF92 /* HopsterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopsterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813747A41D64E44D0022CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		813747A61D64E44D0022CF92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		813747A91D64E44D0022CF92 /* HopsterDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HopsterDemo.xcdatamodel; sourceTree = "<group>"; };
 		813747AC1D64E44D0022CF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		813747AE1D64E44D0022CF92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +58,19 @@
 		813747C01D64E44D0022CF92 /* HopsterDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopsterDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		813747C41D64E44D0022CF92 /* HopsterDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopsterDemoUITests.swift; sourceTree = "<group>"; };
 		813747C61D64E44D0022CF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813748071D661B0F0022CF92 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = "Controllers/Menu page/MenuController.swift"; sourceTree = "<group>"; };
+		813748091D661B230022CF92 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = "Controllers/Menu page/MenuView.swift"; sourceTree = "<group>"; };
+		8137480B1D661C230022CF92 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuModel.swift; path = "Controllers/Menu page/MenuModel.swift"; sourceTree = "<group>"; };
+		8137480E1D6625050022CF92 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = "Controllers/Game page/GameView.swift"; sourceTree = "<group>"; };
+		813748101D66251B0022CF92 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = "Controllers/Game page/GameController.swift"; sourceTree = "<group>"; };
+		813748141D66256C0022CF92 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "Model/Game scene/GameScene.swift"; sourceTree = "<group>"; };
+		813748161D6625AF0022CF92 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameModel.swift; path = "Controllers/Game page/GameModel.swift"; sourceTree = "<group>"; };
+		813748181D662B280022CF92 /* PhysicsEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsEngine.swift; path = "Model/Game scene/PhysicsEngine.swift"; sourceTree = "<group>"; };
+		8137481A1D662B3D0022CF92 /* AIEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIEngine.swift; path = "Model/Game scene/AIEngine.swift"; sourceTree = "<group>"; };
+		8137481C1D662BC80022CF92 /* GameObjectsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObjectsManager.swift; path = "Model/Game scene/GameObjectsManager.swift"; sourceTree = "<group>"; };
+		8137481F1D662C250022CF92 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = "Model/Game scene/GameObjects/GameObject.swift"; sourceTree = "<group>"; };
+		813748671D675DA50022CF92 /* PhysicsObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsObject.swift; path = "Model/Game scene/GameObjects/PhysicsObject.swift"; sourceTree = "<group>"; };
+		813748691D675EA20022CF92 /* AIObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIObject.swift; path = "Model/Game scene/GameObjects/AIObject.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +121,9 @@
 		813747A31D64E44D0022CF92 /* HopsterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				813748121D66252D0022CF92 /* Model */,
+				813748051D661A750022CF92 /* Controllers */,
 				813747A41D64E44D0022CF92 /* AppDelegate.swift */,
-				813747A61D64E44D0022CF92 /* ViewController.swift */,
 				813747AB1D64E44D0022CF92 /* Main.storyboard */,
 				813747AE1D64E44D0022CF92 /* Assets.xcassets */,
 				813747B01D64E44D0022CF92 /* Info.plist */,
@@ -123,6 +148,65 @@
 				813747C61D64E44D0022CF92 /* Info.plist */,
 			);
 			path = HopsterDemoUITests;
+			sourceTree = "<group>";
+		};
+		813748051D661A750022CF92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8137480D1D6624E90022CF92 /* Game page */,
+				813748061D661ABD0022CF92 /* Menu page */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		813748061D661ABD0022CF92 /* Menu page */ = {
+			isa = PBXGroup;
+			children = (
+				813748071D661B0F0022CF92 /* MenuController.swift */,
+				813748091D661B230022CF92 /* MenuView.swift */,
+				8137480B1D661C230022CF92 /* MenuModel.swift */,
+			);
+			name = "Menu page";
+			sourceTree = "<group>";
+		};
+		8137480D1D6624E90022CF92 /* Game page */ = {
+			isa = PBXGroup;
+			children = (
+				8137480E1D6625050022CF92 /* GameView.swift */,
+				813748101D66251B0022CF92 /* GameController.swift */,
+				813748161D6625AF0022CF92 /* GameModel.swift */,
+			);
+			name = "Game page";
+			sourceTree = "<group>";
+		};
+		813748121D66252D0022CF92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				813748131D66253C0022CF92 /* Game scene */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		813748131D66253C0022CF92 /* Game scene */ = {
+			isa = PBXGroup;
+			children = (
+				8137481E1D662BFC0022CF92 /* Game objects */,
+				813748141D66256C0022CF92 /* GameScene.swift */,
+				813748181D662B280022CF92 /* PhysicsEngine.swift */,
+				8137481A1D662B3D0022CF92 /* AIEngine.swift */,
+				8137481C1D662BC80022CF92 /* GameObjectsManager.swift */,
+			);
+			name = "Game scene";
+			sourceTree = "<group>";
+		};
+		8137481E1D662BFC0022CF92 /* Game objects */ = {
+			isa = PBXGroup;
+			children = (
+				8137481F1D662C250022CF92 /* GameObject.swift */,
+				813748671D675DA50022CF92 /* PhysicsObject.swift */,
+				813748691D675EA20022CF92 /* AIObject.swift */,
+			);
+			name = "Game objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +339,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813747A71D64E44D0022CF92 /* ViewController.swift in Sources */,
 				813747A51D64E44D0022CF92 /* AppDelegate.swift in Sources */,
+				8137481B1D662B3D0022CF92 /* AIEngine.swift in Sources */,
+				8137481D1D662BC80022CF92 /* GameObjectsManager.swift in Sources */,
+				8137480A1D661B230022CF92 /* MenuView.swift in Sources */,
+				813748201D662C250022CF92 /* GameObject.swift in Sources */,
+				813748171D6625AF0022CF92 /* GameModel.swift in Sources */,
+				813748151D66256C0022CF92 /* GameScene.swift in Sources */,
+				8137480C1D661C230022CF92 /* MenuModel.swift in Sources */,
+				813748081D661B0F0022CF92 /* MenuController.swift in Sources */,
+				8137480F1D6625050022CF92 /* GameView.swift in Sources */,
+				813748681D675DA50022CF92 /* PhysicsObject.swift in Sources */,
+				8137486A1D675EA20022CF92 /* AIObject.swift in Sources */,
 				813747AA1D64E44D0022CF92 /* HopsterDemo.xcdatamodeld in Sources */,
+				813748111D66251B0022CF92 /* GameController.swift in Sources */,
+				813748191D662B280022CF92 /* PhysicsEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +572,7 @@
 				813747CB1D64E44D0022CF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		813747CC1D64E44D0022CF92 /* Build configuration list for PBXNativeTarget "HopsterDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +581,7 @@
 				813747CE1D64E44D0022CF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		813747CF1D64E44D0022CF92 /* Build configuration list for PBXNativeTarget "HopsterDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +590,7 @@
 				813747D11D64E44D0022CF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
