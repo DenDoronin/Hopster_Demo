@@ -65,16 +65,22 @@ class GameScene: NSObject {
     {
         switch event {
         case .GameSceneEventSingleTap:
+            self.handleSingleTap()
             break
         case .GameSceneEventDoubleTap:
+            self.handleDoubleTap()
             break
         case .GameSceneEventSwipeLeft:
+            self.handleSwipeLeft()
             break
         case .GameSceneEventSwipeRight:
+            self.handleSwipeRight()
             break
         case .GameSceneEventSwipeUp:
+            self.handleSwipeUp()
             break
         case .GameSceneEventSwipeDown:
+            self.handleSwipeDown()
             break
         }
     }
