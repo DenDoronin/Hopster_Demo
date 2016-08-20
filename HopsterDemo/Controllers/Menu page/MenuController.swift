@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MenuController: UIViewController {
 
@@ -20,6 +22,14 @@ class MenuController: UIViewController {
 
     func bindView() {
         self.menuView.btnPlay.addTarget(self, action: #selector(btnPlayDidPress), forControlEvents: UIControlEvents.PrimaryActionTriggered)
+        
+//        let videoURL = NSURL(string: "http://player.ooyala.com/player/all/gyMDk0cDr6snzZQW8Uz6vuF6wfHYi9eI.m3u8")
+//        let player = AVPlayer(URL: videoURL!)
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = self.view.bounds
+//        self.view.layer.addSublayer(playerLayer)
+//        player.play()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,7 +38,15 @@ class MenuController: UIViewController {
     }
     
     func btnPlayDidPress()  {
+        // dismiss button in order to prevent double tap
+        self.menuView.btnPlay.enabled = false
         self.performSegueWithIdentifier("optionSelectedSegue", sender: self)
+    }
+    
+    
+    override func viewDidDisappear(animated: Bool) {
+        //restore button state
+        self.menuView.btnPlay.enabled = true
     }
     
     /*

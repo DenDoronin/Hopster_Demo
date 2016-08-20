@@ -26,6 +26,20 @@
 		813748201D662C250022CF92 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137481F1D662C250022CF92 /* GameObject.swift */; };
 		813748681D675DA50022CF92 /* PhysicsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748671D675DA50022CF92 /* PhysicsObject.swift */; };
 		8137486A1D675EA20022CF92 /* AIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748691D675EA20022CF92 /* AIObject.swift */; };
+		813748731D6775310022CF92 /* Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748721D6775310022CF92 /* Brick.swift */; };
+		813748751D6776070022CF92 /* BallPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748741D6776070022CF92 /* BallPO.swift */; };
+		813748771D6776220022CF92 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748761D6776220022CF92 /* Ball.swift */; };
+		813748791D6776520022CF92 /* BallAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748781D6776520022CF92 /* BallAI.swift */; };
+		8137487B1D6776760022CF92 /* ArcPlayerAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137487A1D6776760022CF92 /* ArcPlayerAI.swift */; };
+		8137487D1D6776910022CF92 /* ArcPlayerPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137487C1D6776910022CF92 /* ArcPlayerPO.swift */; };
+		8137487F1D6776E40022CF92 /* ArcPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137487E1D6776E40022CF92 /* ArcPlayer.swift */; };
+		813748811D6785490022CF92 /* ArcRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748801D6785490022CF92 /* ArcRenderer.swift */; };
+		813748831D6787C40022CF92 /* ArcanoidScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748821D6787C40022CF92 /* ArcanoidScene.swift */; };
+		813748851D6787DF0022CF92 /* ArcanoidPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748841D6787DF0022CF92 /* ArcanoidPE.swift */; };
+		813748871D67880A0022CF92 /* ArcanoidAE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748861D67880A0022CF92 /* ArcanoidAE.swift */; };
+		813748891D6788730022CF92 /* ArcanoidOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748881D6788730022CF92 /* ArcanoidOM.swift */; };
+		8137488B1D6868AD0022CF92 /* ArcanoidAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8137488A1D6868AD0022CF92 /* ArcanoidAssets.xcassets */; };
+		8137488D1D688E910022CF92 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8137488C1D688E910022CF92 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29771AF4E7DF5FEECAE8BCBC /* Pods-HopsterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopsterDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HopsterDemo/Pods-HopsterDemo.release.xcconfig"; sourceTree = "<group>"; };
 		813747A11D64E44D0022CF92 /* HopsterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopsterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813747A41D64E44D0022CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		813747A91D64E44D0022CF92 /* HopsterDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HopsterDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +86,22 @@
 		8137481F1D662C250022CF92 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = "Model/Game scene/GameObjects/GameObject.swift"; sourceTree = "<group>"; };
 		813748671D675DA50022CF92 /* PhysicsObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsObject.swift; path = "Model/Game scene/GameObjects/PhysicsObject.swift"; sourceTree = "<group>"; };
 		813748691D675EA20022CF92 /* AIObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIObject.swift; path = "Model/Game scene/GameObjects/AIObject.swift"; sourceTree = "<group>"; };
+		813748721D6775310022CF92 /* Brick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Brick.swift; path = "Model/Arcanoid game/Objects/Brick/Brick.swift"; sourceTree = "<group>"; };
+		813748741D6776070022CF92 /* BallPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BallPO.swift; path = "Model/Arcanoid game/Objects/Ball/BallPO.swift"; sourceTree = "<group>"; };
+		813748761D6776220022CF92 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = "Model/Arcanoid game/Objects/Ball/Ball.swift"; sourceTree = "<group>"; };
+		813748781D6776520022CF92 /* BallAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BallAI.swift; path = "Model/Arcanoid game/Objects/Ball/BallAI.swift"; sourceTree = "<group>"; };
+		8137487A1D6776760022CF92 /* ArcPlayerAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcPlayerAI.swift; path = "Model/Arcanoid game/Objects/Player/ArcPlayerAI.swift"; sourceTree = "<group>"; };
+		8137487C1D6776910022CF92 /* ArcPlayerPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcPlayerPO.swift; path = "Model/Arcanoid game/Objects/Player/ArcPlayerPO.swift"; sourceTree = "<group>"; };
+		8137487E1D6776E40022CF92 /* ArcPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcPlayer.swift; path = "Model/Arcanoid game/Objects/Player/ArcPlayer.swift"; sourceTree = "<group>"; };
+		813748801D6785490022CF92 /* ArcRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcRenderer.swift; path = "Model/Arcanoid game/Renderer/ArcRenderer.swift"; sourceTree = "<group>"; };
+		813748821D6787C40022CF92 /* ArcanoidScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcanoidScene.swift; path = "Model/Arcanoid game/Arcanoid scene/ArcanoidScene.swift"; sourceTree = "<group>"; };
+		813748841D6787DF0022CF92 /* ArcanoidPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcanoidPE.swift; path = "Model/Arcanoid game/Arcanoid scene/ArcanoidPE.swift"; sourceTree = "<group>"; };
+		813748861D67880A0022CF92 /* ArcanoidAE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcanoidAE.swift; path = "Model/Arcanoid game/Arcanoid scene/ArcanoidAE.swift"; sourceTree = "<group>"; };
+		813748881D6788730022CF92 /* ArcanoidOM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcanoidOM.swift; path = "Model/Arcanoid game/Arcanoid scene/ArcanoidOM.swift"; sourceTree = "<group>"; };
+		8137488A1D6868AD0022CF92 /* ArcanoidAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ArcanoidAssets.xcassets; path = "Model/Arcanoid game/ArcanoidAssets.xcassets"; sourceTree = "<group>"; };
+		8137488C1D688E910022CF92 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F9EF8050FCA1DDB32EE8FE1 /* Pods-HopsterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopsterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HopsterDemo/Pods-HopsterDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E027B00B59517C5C0C67525F /* Pods_HopsterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopsterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8137488D1D688E910022CF92 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +130,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4009A89810D1F2B61FB4F040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8137488C1D688E910022CF92 /* AVFoundation.framework */,
+				E027B00B59517C5C0C67525F /* Pods_HopsterDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		813747981D64E44D0022CF92 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +146,8 @@
 				813747B81D64E44D0022CF92 /* HopsterDemoTests */,
 				813747C31D64E44D0022CF92 /* HopsterDemoUITests */,
 				813747A21D64E44D0022CF92 /* Products */,
+				8F6489A6B48B0DD48F4843C2 /* Pods */,
+				4009A89810D1F2B61FB4F040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +164,7 @@
 		813747A31D64E44D0022CF92 /* HopsterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				81BFEA5C1D6895AE009F90E4 /* Utility */,
 				813748121D66252D0022CF92 /* Model */,
 				813748051D661A750022CF92 /* Controllers */,
 				813747A41D64E44D0022CF92 /* AppDelegate.swift */,
@@ -183,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				813748131D66253C0022CF92 /* Game scene */,
+				8137486B1D6772D90022CF92 /* Arcanoid game */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,6 +254,90 @@
 			name = "Game objects";
 			sourceTree = "<group>";
 		};
+		8137486B1D6772D90022CF92 /* Arcanoid game */ = {
+			isa = PBXGroup;
+			children = (
+				813748711D67741D0022CF92 /* Renderer */,
+				8137486D1D6773100022CF92 /* Arcanoid scene */,
+				8137486C1D6772F30022CF92 /* Objects */,
+			);
+			name = "Arcanoid game";
+			sourceTree = "<group>";
+		};
+		8137486C1D6772F30022CF92 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				813748701D67734A0022CF92 /* Brick */,
+				8137486F1D6773430022CF92 /* Ball */,
+				8137486E1D6773380022CF92 /* Player */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		8137486D1D6773100022CF92 /* Arcanoid scene */ = {
+			isa = PBXGroup;
+			children = (
+				813748821D6787C40022CF92 /* ArcanoidScene.swift */,
+				813748841D6787DF0022CF92 /* ArcanoidPE.swift */,
+				813748861D67880A0022CF92 /* ArcanoidAE.swift */,
+				813748881D6788730022CF92 /* ArcanoidOM.swift */,
+				8137488A1D6868AD0022CF92 /* ArcanoidAssets.xcassets */,
+			);
+			name = "Arcanoid scene";
+			sourceTree = "<group>";
+		};
+		8137486E1D6773380022CF92 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				8137487E1D6776E40022CF92 /* ArcPlayer.swift */,
+				8137487C1D6776910022CF92 /* ArcPlayerPO.swift */,
+				8137487A1D6776760022CF92 /* ArcPlayerAI.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		8137486F1D6773430022CF92 /* Ball */ = {
+			isa = PBXGroup;
+			children = (
+				813748761D6776220022CF92 /* Ball.swift */,
+				813748741D6776070022CF92 /* BallPO.swift */,
+				813748781D6776520022CF92 /* BallAI.swift */,
+			);
+			name = Ball;
+			sourceTree = "<group>";
+		};
+		813748701D67734A0022CF92 /* Brick */ = {
+			isa = PBXGroup;
+			children = (
+				813748721D6775310022CF92 /* Brick.swift */,
+			);
+			name = Brick;
+			sourceTree = "<group>";
+		};
+		813748711D67741D0022CF92 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				813748801D6785490022CF92 /* ArcRenderer.swift */,
+			);
+			name = Renderer;
+			sourceTree = "<group>";
+		};
+		81BFEA5C1D6895AE009F90E4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		8F6489A6B48B0DD48F4843C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F9EF8050FCA1DDB32EE8FE1 /* Pods-HopsterDemo.debug.xcconfig */,
+				29771AF4E7DF5FEECAE8BCBC /* Pods-HopsterDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 813747C91D64E44D0022CF92 /* Build configuration list for PBXNativeTarget "HopsterDemo" */;
 			buildPhases = (
+				BE3118B91A0A7F5B2F5C3E8A /* Check Pods Manifest.lock */,
 				8137479D1D64E44D0022CF92 /* Sources */,
 				8137479E1D64E44D0022CF92 /* Frameworks */,
 				8137479F1D64E44D0022CF92 /* Resources */,
+				C47393AF4E513987283B87D8 /* Embed Pods Frameworks */,
+				2D6EDB647B40DB5741DA50AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813747AF1D64E44D0022CF92 /* Assets.xcassets in Resources */,
+				8137488B1D6868AD0022CF92 /* ArcanoidAssets.xcassets in Resources */,
 				813747AD1D64E44D0022CF92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,24 +467,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D6EDB647B40DB5741DA50AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		BE3118B91A0A7F5B2F5C3E8A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		C47393AF4E513987283B87D8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8137479D1D64E44D0022CF92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				813747A51D64E44D0022CF92 /* AppDelegate.swift in Sources */,
+				813748731D6775310022CF92 /* Brick.swift in Sources */,
 				8137481B1D662B3D0022CF92 /* AIEngine.swift in Sources */,
 				8137481D1D662BC80022CF92 /* GameObjectsManager.swift in Sources */,
+				813748871D67880A0022CF92 /* ArcanoidAE.swift in Sources */,
 				8137480A1D661B230022CF92 /* MenuView.swift in Sources */,
+				813748831D6787C40022CF92 /* ArcanoidScene.swift in Sources */,
 				813748201D662C250022CF92 /* GameObject.swift in Sources */,
+				813748771D6776220022CF92 /* Ball.swift in Sources */,
 				813748171D6625AF0022CF92 /* GameModel.swift in Sources */,
 				813748151D66256C0022CF92 /* GameScene.swift in Sources */,
+				813748811D6785490022CF92 /* ArcRenderer.swift in Sources */,
 				8137480C1D661C230022CF92 /* MenuModel.swift in Sources */,
 				813748081D661B0F0022CF92 /* MenuController.swift in Sources */,
+				8137487F1D6776E40022CF92 /* ArcPlayer.swift in Sources */,
+				813748851D6787DF0022CF92 /* ArcanoidPE.swift in Sources */,
 				8137480F1D6625050022CF92 /* GameView.swift in Sources */,
+				813748891D6788730022CF92 /* ArcanoidOM.swift in Sources */,
+				8137487D1D6776910022CF92 /* ArcPlayerPO.swift in Sources */,
 				813748681D675DA50022CF92 /* PhysicsObject.swift in Sources */,
+				8137487B1D6776760022CF92 /* ArcPlayerAI.swift in Sources */,
 				8137486A1D675EA20022CF92 /* AIObject.swift in Sources */,
+				813748791D6776520022CF92 /* BallAI.swift in Sources */,
 				813747AA1D64E44D0022CF92 /* HopsterDemo.xcdatamodeld in Sources */,
+				813748751D6776070022CF92 /* BallPO.swift in Sources */,
 				813748111D66251B0022CF92 /* GameController.swift in Sources */,
 				813748191D662B280022CF92 /* PhysicsEngine.swift in Sources */,
 			);
@@ -488,8 +684,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
 				INFOPLIST_FILE = HopsterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = HP.HopsterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -500,8 +708,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
 				INFOPLIST_FILE = HopsterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = HP.HopsterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

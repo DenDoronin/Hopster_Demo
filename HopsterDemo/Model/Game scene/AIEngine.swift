@@ -19,5 +19,8 @@ class AIEngine: NSObject {
     func update() {
         // override this method and handle the logic of object interactions
         // check triggers and so on
+        for gameObject in self.objectManager!.objects {
+            gameObject.physicsObject.update()
+        }
     }
 }

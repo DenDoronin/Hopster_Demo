@@ -17,11 +17,13 @@ enum GameSceneEvents {
     case GameSceneEventSwipeDown
 }
 
-protocol GameSceneRenderDelegate {
+
+protocol GameSceneRenderDelegate: class  {
 
     func renderObjectFromManager(anObjectManager: GameObjectsManager)
-    
+    func sceneBounds() -> CGRect
 }
+
 
 
 class GameScene: NSObject {
@@ -29,11 +31,10 @@ class GameScene: NSObject {
     var physicsEngine: PhysicsEngine?
     var logicEngine  : AIEngine?
     var objectManager: GameObjectsManager?
-    
-    var renderer: GameSceneRenderDelegate?
+    weak var renderer: GameSceneRenderDelegate?
     
     var gameSceneTimer: NSTimer!
-    var gameSceneUpdateInerval: NSTimeInterval = 0.1  {
+    var gameSceneUpdateInerval: NSTimeInterval = 0.05  {
         // change interval on flight - just reinit timer with new value
        didSet {
         if self.gameSceneTimer != nil {
@@ -46,31 +47,43 @@ class GameScene: NSObject {
     {
         
         super.init()
+        self.renderer = aRenderer
+
+       
+    }
+    func setupScene() {
+        // the starting point for custom components creation
         self.objectManager = GameObjectsManager()
         self.physicsEngine = PhysicsEngine(anObjectManager: self.objectManager!)
-        self.logicEngine = AIEngine(anObjectManager: self.objectManager!)
-        
-        self.gameSceneTimer = NSTimer.scheduledTimerWithTimeInterval(self.gameSceneUpdateInerval,
-                                                                     target: self,
-                                                                     selector: #selector(update),
-                                                                     userInfo: nil, repeats: true)
+        self.logicEngine   = AIEngine(anObjectManager: self.objectManager!)
     }
     
-    func populateScene () {
+    func populateScene() {
         // TO DO create objects
         //
     }
     
     func start()
     {
+        self.setupScene()
+        self.physicsEngine?.bounds = (self.renderer?.sceneBounds())!
         self.populateScene()
-        self.gameSceneTimer.fire()
+        self.gameSceneTimer = NSTimer.scheduledTimerWithTimeInterval(self.gameSceneUpdateInerval,
+                                                                     target: self,
+                                                                     selector: #selector(update),
+                                                                     userInfo: nil, repeats: true)
+    }
+    
+    func stop()
+    {
+        self.gameSceneTimer.invalidate()
+        self.gameSceneTimer = nil
     }
     
     func update() {
         self.physicsEngine?.update()
         self.logicEngine?.update()
-        // TO DO:: notify render
+        self.renderer?.renderObjectFromManager(self.objectManager!)
         
     }
     

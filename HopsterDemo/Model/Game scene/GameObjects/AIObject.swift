@@ -12,30 +12,31 @@ class AIObject: NSObject {
     
     func update () {
         // this is general point to handle logic state
+        
     }
     
     func canMoveLeft() -> Bool {
-        return true
+        return false
     }
     
     func canMoveRight() -> Bool {
-        return true
+        return false
     }
     
     func canMoveUp() -> Bool {
-        return true
+        return false
     }
     
     func canMoveDown() -> Bool {
-        return true
+        return false
     }
     
     func canJump() -> Bool {
-        return true
+        return false
     }
     
     func canRotate() -> Bool {
-        return true
+        return false
     }
     
 }

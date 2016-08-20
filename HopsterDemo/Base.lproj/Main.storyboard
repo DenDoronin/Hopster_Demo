@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ear-ze-VRZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -36,30 +36,49 @@
                             <outlet property="btnPlay" destination="7sU-12-Hg3" id="RbB-Tl-yRr"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="qza-Yo-cEM"/>
                     <connections>
                         <segue destination="cUL-J5-t6Y" kind="show" identifier="optionSelectedSegue" id="QY0-6d-7dn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="345"/>
+            <point key="canvasLocation" x="2397" y="345"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="pgb-Gf-ehA">
             <objects>
-                <viewController id="cUL-J5-t6Y" sceneMemberID="viewController">
+                <viewController id="cUL-J5-t6Y" customClass="GameController" customModule="HopsterDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dx7-el-cMF"/>
                         <viewControllerLayoutGuide type="bottom" id="8ea-k7-uPf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ik0-lI-B8Y">
+                    <view key="view" contentMode="scaleToFill" id="Ik0-lI-B8Y" customClass="GameView" customModule="HopsterDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0l1-TC-wf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="345"/>
+            <point key="canvasLocation" x="4610" y="345"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6GI-AL-pBs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ear-ze-VRZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="smr-b2-yoG">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cP4-xS-IKc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Afr-gc-C2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="345"/>
         </scene>
     </scenes>
 </document>

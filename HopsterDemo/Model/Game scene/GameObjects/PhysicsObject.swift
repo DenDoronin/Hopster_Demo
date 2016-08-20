@@ -40,9 +40,9 @@ class PhysicsObject: NSObject {
     var collisionRectagle: CGRect  {
         
         return CGRect(x: self.position.x - self.size.width / 2.0,
-                      y: self.position.x - self.size.height / 2.0,
-                      width: self.size.height,
-                      height: self.size.width)
+                      y: self.position.y - self.size.height / 2.0,
+                      width: self.size.width,
+                      height: self.size.height)
     }
     
     
