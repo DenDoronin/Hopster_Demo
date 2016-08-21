@@ -1,6 +1,6 @@
 # Hopster Demo
 
-A mini technical project to impress with my skill and creativity. Let me show the final version
+A mini technical project to impress with my skill and creativity. Let me show the final version. 
 
 1. Here how it looks before start.
 
@@ -40,14 +40,51 @@ A mini technical project to impress with my skill and creativity. Let me show th
 
 There are much more thing covered by this great demo :)
 
+## Environment
+
+Developed on:
+
+Xcode Version 7.3.1 (7D1014)
+
+Tested and verified on:
+
+tvOS Simulator - AppleTV 1080p, 9.2
+
+Tested and verified on:
+
 ## Installation
 
-TODO: Describe the installation process
+1. Download from the GitHub
+2. Launch HopsterDemo.xcworkspace with Xcode 7.3.1
+3. Choose Apple TV 1080p simulator
+4. Press Product -> Run
+5. Enjoy!
 
 ## Usage
 
-TODO: Write usage instructions
+Main menu:
+
+You can swipe from character to character to select video You'll watch after the game.
+
+Game page:
+
+Swipe to move control. Don't let the bird fall! After You collect all the bricks, You can watch video.
+If You lose, You still can watch video! 
+
+Video page:
+
+Tap siri remote to play/stop video. Playback progress is shown at the bottom of the screen.
 
 ## History
 
-TODO: Write history
+Please, look into commits page for detailed history.
+
+## Technical notes
+
+Demo covered the following topics:
+
+1. Concurency (MenuModel based on NSOperationQueue && NSOperations)
+2. Autolayout (Storyboard vs programmatically)
+3. CoreGraphics (Game scene renderer)
+4. Desing patterns (with game development)
+5. Multimedia (AVPlayer, UIView animations)
