@@ -50,8 +50,6 @@ Tested and verified on:
 
 tvOS Simulator - AppleTV 1080p, 9.2
 
-Tested and verified on:
-
 ## Installation
 
 1. Download from the GitHub
