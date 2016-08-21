@@ -10,10 +10,13 @@ import UIKit
 
 class GameController: UIViewController {
 
-    var gameView: GameView! { return self.view as! GameView }
-    var gameScene: ArcanoidScene?
+    var person: GamePerson?
     
+    private var gameView: GameView! { return self.view as! GameView }
+    private var gameScene: ArcanoidScene?
+
     private var actionSheet : UIAlertController?
+    private var alert:UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +24,33 @@ class GameController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.gameView.decorate()
-        self.gameScene = ArcanoidScene(aRenderer: self.gameView.arcRenderer!)
-        self.setupEventHandlers()
-        self.gameScene?.start()
+        self.showAlert()
         
+    }
+    
+    func showAlert() {
+        let title = NSLocalizedString("Welcome", comment: "")
+        let message = NSLocalizedString("Catch all bricks and watch video!", comment: "")
+        let okTitle = NSLocalizedString("Let's start", comment: "")
+        let cancelTitle = NSLocalizedString("No, I think next time", comment: "")
+        
+        self.alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        self.alert!.addAction(UIAlertAction(title: okTitle, style: .Default, handler: {[weak self]  action in
+            guard let strongSelf = self else { return }
+            strongSelf.alert = nil
+            
+            strongSelf.gameScene = ArcanoidScene(aRenderer: strongSelf.gameView.arcRenderer!)
+            strongSelf.setupEventHandlers()
+            strongSelf.gameScene?.start()
+        }))
+        self.alert!.addAction(UIAlertAction(title: cancelTitle, style: .Cancel, handler: {[weak self]  action in
+            guard let strongSelf = self else { return }
+            strongSelf.alert = nil
+            strongSelf.navigationController?.popToRootViewControllerAnimated(true)
+        }))
+        
+        self.presentViewController(self.alert!, animated: true, completion: nil)
+
     }
     
     func setupEventHandlers() {
@@ -48,15 +74,31 @@ class GameController: UIViewController {
         
         self.gameScene?.stop()
         
-        self.actionSheet = UIAlertController(title: "Great!", message: "You win, now you can enjoy video :)", preferredStyle: .ActionSheet)
         
-        self.actionSheet!.addAction(UIAlertAction(title: "Yes, let's watch", style: .Default, handler: { action in
-            self.actionSheet = nil
+        let title = NSLocalizedString("Great!", comment: "")
+        let message = NSLocalizedString("You win, now you can enjoy video :)", comment: "")
+        let okTitle = NSLocalizedString("Yes, let's watch", comment: "")
+        let retryTitle = NSLocalizedString("No, I want one more try", comment: "")
+        let cancelTitle = NSLocalizedString("No, return to the menu", comment: "")
+        
+        self.actionSheet = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+        
+        self.actionSheet!.addAction(UIAlertAction(title: okTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.performSegueWithIdentifier("playVideoSegue", sender: self)
         }))
         
-        self.actionSheet!.addAction(UIAlertAction(title: "No, return to the menu", style: .Default, handler: { action in
-                    self.actionSheet = nil
-                    self.navigationController?.popToRootViewControllerAnimated(true)
+        self.actionSheet!.addAction(UIAlertAction(title: retryTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.gameScene?.start()
+        }))
+        
+        self.actionSheet!.addAction(UIAlertAction(title: cancelTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.navigationController?.popToRootViewControllerAnimated(true)
         }))
         self.presentViewController(self.actionSheet!, animated: true, completion: nil)
     }
@@ -69,20 +111,30 @@ class GameController: UIViewController {
         
         self.gameScene?.stop()
         
-        self.actionSheet = UIAlertController(title: "Sorry :(", message: "Try again :)", preferredStyle: .ActionSheet)
+        let title = NSLocalizedString("Sorry :(", comment: "")
+        let message = NSLocalizedString("Try again :)", comment: "")
+        let okTitle = NSLocalizedString("Yes, let's try", comment: "")
+        let videoTitle = NSLocalizedString("No, I want video!", comment: "")
+        let cancelTitle = NSLocalizedString("No, return to the menu", comment: "")
         
-        self.actionSheet!.addAction(UIAlertAction(title: "Yes, let's try", style: .Default, handler: { action in
-            self.actionSheet = nil
-            self.gameScene?.start()
+        self.actionSheet = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+        
+        self.actionSheet!.addAction(UIAlertAction(title: okTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.gameScene?.start()
         }))
         
-        self.actionSheet!.addAction(UIAlertAction(title: "No, I want video!", style: .Default, handler: { action in
-            self.actionSheet = nil
+        self.actionSheet!.addAction(UIAlertAction(title: videoTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.performSegueWithIdentifier("playVideoSegue", sender: self)
         }))
         
-        self.actionSheet!.addAction(UIAlertAction(title: "No, return to the menu", style: .Default, handler: { action in
-            self.actionSheet = nil
-            self.navigationController?.popToRootViewControllerAnimated(true)
+        self.actionSheet!.addAction(UIAlertAction(title: cancelTitle, style: .Default, handler: {[weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.actionSheet = nil
+            strongSelf.navigationController?.popToRootViewControllerAnimated(true)
         }))
         self.presentViewController(self.actionSheet!, animated: true, completion: nil)
 
@@ -109,14 +161,17 @@ class GameController: UIViewController {
         
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "playVideoSegue") {
+            let videoVC = segue.destinationViewController as! VideoController
+            videoVC.person = self.person
+            
+        }
     }
-    */
 
 }

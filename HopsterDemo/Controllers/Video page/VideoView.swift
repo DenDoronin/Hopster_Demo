@@ -1,17 +1,15 @@
 //
-//  MenuView.swift
+//  VideoView.swift
 //  HopsterDemo
 //
-//  Created by Doronin Denis on 8/18/16.
+//  Created by Doronin Denis on 8/21/16.
 //  Copyright © 2016 HP. All rights reserved.
 //
 
 import UIKit
 
-class MenuView: UIView {
+class VideoView: UIView {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var btnPlay: UIButton!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -19,7 +17,12 @@ class MenuView: UIView {
         // Drawing code
     }
     */
-    
+
+    @IBOutlet weak var playerContainer: UIView!
+    @IBOutlet weak var playerProgress: UIProgressView!
+    @IBOutlet weak var playerPause: UIImageView!
+
+
     func decorate () {
         self.backgroundColor = UIColor.redColor()
         
@@ -44,7 +47,12 @@ class MenuView: UIView {
             "V:|[imageView]|",
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil, views: views))
+
     }
-
-
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transitionWithView(view, duration: 0.5, options: .TransitionCrossDissolve, animations: {() -> Void in
+            view.hidden = hidden
+            }, completion: { _ in })
+    }
 }

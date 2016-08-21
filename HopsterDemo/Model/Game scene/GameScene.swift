@@ -76,8 +76,11 @@ class GameScene: NSObject {
     
     func stop()
     {
-        self.gameSceneTimer.invalidate()
-        self.gameSceneTimer = nil
+        if (self.gameSceneTimer != nil)
+        {
+            self.gameSceneTimer.invalidate()
+            self.gameSceneTimer = nil
+        }
     }
     
     func update() {

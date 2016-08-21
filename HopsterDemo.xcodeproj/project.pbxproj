@@ -40,6 +40,12 @@
 		813748891D6788730022CF92 /* ArcanoidOM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813748881D6788730022CF92 /* ArcanoidOM.swift */; };
 		8137488B1D6868AD0022CF92 /* ArcanoidAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8137488A1D6868AD0022CF92 /* ArcanoidAssets.xcassets */; };
 		8137488D1D688E910022CF92 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8137488C1D688E910022CF92 /* AVFoundation.framework */; };
+		81BFEA731D699247009F90E4 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA721D699247009F90E4 /* VideoController.swift */; };
+		81BFEA751D69925F009F90E4 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA741D69925F009F90E4 /* VideoView.swift */; };
+		81BFEA791D69C07C009F90E4 /* resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81BFEA781D69C07C009F90E4 /* resources.plist */; };
+		81BFEA7B1D69C2E7009F90E4 /* GamePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */; };
+		81BFEA7D1D69E9F9009F90E4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7C1D69E9F9009F90E4 /* MenuCell.swift */; };
+		81BFEA7F1D69F3AC009F90E4 /* MenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7E1D69F3AC009F90E4 /* MenuLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +106,12 @@
 		813748881D6788730022CF92 /* ArcanoidOM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArcanoidOM.swift; path = "Model/Arcanoid game/Arcanoid scene/ArcanoidOM.swift"; sourceTree = "<group>"; };
 		8137488A1D6868AD0022CF92 /* ArcanoidAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ArcanoidAssets.xcassets; path = "Model/Arcanoid game/ArcanoidAssets.xcassets"; sourceTree = "<group>"; };
 		8137488C1D688E910022CF92 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		81BFEA721D699247009F90E4 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoController.swift; path = "Controllers/Video page/VideoController.swift"; sourceTree = "<group>"; };
+		81BFEA741D69925F009F90E4 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoView.swift; path = "Controllers/Video page/VideoView.swift"; sourceTree = "<group>"; };
+		81BFEA781D69C07C009F90E4 /* resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = resources.plist; path = "Controllers/Menu page/resources.plist"; sourceTree = "<group>"; };
+		81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePerson.swift; path = "Controllers/Menu page/GamePerson.swift"; sourceTree = "<group>"; };
+		81BFEA7C1D69E9F9009F90E4 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = "Controllers/Menu page/MenuCell.swift"; sourceTree = "<group>"; };
+		81BFEA7E1D69F3AC009F90E4 /* MenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLayout.swift; path = "Controllers/Menu page/MenuLayout.swift"; sourceTree = "<group>"; };
 		9F9EF8050FCA1DDB32EE8FE1 /* Pods-HopsterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopsterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HopsterDemo/Pods-HopsterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E027B00B59517C5C0C67525F /* Pods_HopsterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopsterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +209,7 @@
 		813748051D661A750022CF92 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				81BFEA711D699224009F90E4 /* Video page */,
 				8137480D1D6624E90022CF92 /* Game page */,
 				813748061D661ABD0022CF92 /* Menu page */,
 			);
@@ -209,6 +222,10 @@
 				813748071D661B0F0022CF92 /* MenuController.swift */,
 				813748091D661B230022CF92 /* MenuView.swift */,
 				8137480B1D661C230022CF92 /* MenuModel.swift */,
+				81BFEA781D69C07C009F90E4 /* resources.plist */,
+				81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */,
+				81BFEA7C1D69E9F9009F90E4 /* MenuCell.swift */,
+				81BFEA7E1D69F3AC009F90E4 /* MenuLayout.swift */,
 			);
 			name = "Menu page";
 			sourceTree = "<group>";
@@ -329,6 +346,15 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		81BFEA711D699224009F90E4 /* Video page */ = {
+			isa = PBXGroup;
+			children = (
+				81BFEA721D699247009F90E4 /* VideoController.swift */,
+				81BFEA741D69925F009F90E4 /* VideoView.swift */,
+			);
+			name = "Video page";
+			sourceTree = "<group>";
+		};
 		8F6489A6B48B0DD48F4843C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +471,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BFEA791D69C07C009F90E4 /* resources.plist in Resources */,
 				813747AF1D64E44D0022CF92 /* Assets.xcassets in Resources */,
 				8137488B1D6868AD0022CF92 /* ArcanoidAssets.xcassets in Resources */,
 				813747AD1D64E44D0022CF92 /* Main.storyboard in Resources */,
@@ -525,11 +552,14 @@
 			files = (
 				813747A51D64E44D0022CF92 /* AppDelegate.swift in Sources */,
 				813748731D6775310022CF92 /* Brick.swift in Sources */,
+				81BFEA7D1D69E9F9009F90E4 /* MenuCell.swift in Sources */,
+				81BFEA751D69925F009F90E4 /* VideoView.swift in Sources */,
 				8137481B1D662B3D0022CF92 /* AIEngine.swift in Sources */,
 				8137481D1D662BC80022CF92 /* GameObjectsManager.swift in Sources */,
 				813748871D67880A0022CF92 /* ArcanoidAE.swift in Sources */,
 				8137480A1D661B230022CF92 /* MenuView.swift in Sources */,
 				813748831D6787C40022CF92 /* ArcanoidScene.swift in Sources */,
+				81BFEA7B1D69C2E7009F90E4 /* GamePerson.swift in Sources */,
 				813748201D662C250022CF92 /* GameObject.swift in Sources */,
 				813748771D6776220022CF92 /* Ball.swift in Sources */,
 				813748171D6625AF0022CF92 /* GameModel.swift in Sources */,
@@ -550,6 +580,8 @@
 				813748751D6776070022CF92 /* BallPO.swift in Sources */,
 				813748111D66251B0022CF92 /* GameController.swift in Sources */,
 				813748191D662B280022CF92 /* PhysicsEngine.swift in Sources */,
+				81BFEA7F1D69F3AC009F90E4 /* MenuLayout.swift in Sources */,
+				81BFEA731D699247009F90E4 /* VideoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

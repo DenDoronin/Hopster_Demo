@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Pingu</string>
+		<key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/Vo5vX5D8QRXwMN5TO8i7kxH4yITE0fnNB6R_nQbC1DSZitw9CUuUQkv__-W2HwCHxanU2JmNoseAxcWJqRj0PHnjQRzK</string>
+		<key>streaming</key>
+		<string>http://player.ooyala.com/player/all/gyMDk0cDr6snzZQW8Uz6vuF6wfHYi9eI.m3u8</string>
+	</dict>
+    <dict>
+        <key>name</key>
+        <string>Moshi Monsters</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/et-6a3fwp8M6LwZppacdvvN_sU-dDBQOz-YK7vIg_tiKJWPpt5yrMJhaoiqiXStQmfp_VGaG6XMP8n6TBvXdzIqRSgykeQ</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/9pZ21rdjraYF-3ske-qYGs3ZedoekNp-.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Tractor Tom</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/ewi_RLDVp0r_92hy541ggU6X51dT0RtcOrNC0b-dmJcfTPo8lIdpkp2zj7kLgr92KPpJFgdiUqLSVQ9X_H6gXC-7A7bX0w</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/dpcTh3bzp_te7mQ1BeEBqCEJW6xwm8wc.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Bob the Builder</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/6snwTeuDaLcObRPsXTadq8co6jTmpKxEPN2ww7oIoz65QvwqglJwhjg12zagRN0WwH-urlNP8Xazj6X0QRlarKdt4wc</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/R0NGgzcToeB9TWoiWk2xlGqi3HZdLtpn.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Babar</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/HmJmy05FDjd_I2LabZcEG_RoBZtM_IpQmFx-ZmxdGpFg2zHYPHlG8YBW1A0-lVjIhNo2zVeX8hG6zhwODLk6ICHARqz4</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/R0NGgzcToeB9TWoiWk2xlGqi3HZdLtpn.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Fifi</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/Fjhs7Rva3CzMSrnWGtB6Qk3xbUh46JzoognXR-j3FmXnOpvCDlZzyebh087YXlexcXyqsrveu48sK3j2iOx1cWSfAL587A</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/RtNGFjdDprUbXmOPa9oX2hEgyvp_G9gD.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Fireman Sam</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/CvBJ-WAZc_90oWRbIubYfIeMTPLBYWtoFEKUKHeAicxTkk2GYlGLnUWZ9tP3VlDvagZw-w7ZVyOa4iBejVK3l69EoyT5</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/44cmU3MDE63NLA9qRIOlMv6U7kdDftOH.m3u8</string>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Learn to Draw</string>
+        <key>thumbnail</key>
+        <string>http://lh3.googleusercontent.com/uYiECmUPJ6rRJaRZAM3I3dY_-6YLHeX4sdSeAe7dFSf2oKiJRJYVh4xZf5OxnPSFxm2Mor_3ezausovhmQAgDcCSqidy6g</string>
+        <key>streaming</key>
+        <string>http://player.ooyala.com/player/all/N1ZGZtdDoSr09GF7hZJaLBGVP3LK2CTO.m3u8</string>
+    </dict>
+</array>
+</plist>
