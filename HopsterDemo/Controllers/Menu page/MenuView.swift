@@ -11,14 +11,6 @@ import UIKit
 class MenuView: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var btnPlay: UIButton!
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     func decorate () {
         self.backgroundColor = UIColor.redColor()

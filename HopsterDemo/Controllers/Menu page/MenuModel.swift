@@ -20,7 +20,6 @@ class MenuModel: NSObject {
     weak var delegate: MenuModelDelegate?
     
     var objects: [GamePerson] = []
-    
     var operationQueue: NSOperationQueue
     
     init(aDelegate: MenuModelDelegate) {
@@ -29,6 +28,12 @@ class MenuModel: NSObject {
         self.operationQueue = NSOperationQueue()
         self.operationQueue.maxConcurrentOperationCount = 1
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Model activity
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
     
     func startActivity() {
         NSOperationQueue.mainQueue().addOperationWithBlock {[weak self] in
@@ -58,9 +63,14 @@ class MenuModel: NSObject {
         
         self.operationQueue.addOperation(fetchOp)
         self.operationQueue.addOperation(downloadOp)
-        
-       
+
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Model cycle operations
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
     
     func downloadContent() {
         

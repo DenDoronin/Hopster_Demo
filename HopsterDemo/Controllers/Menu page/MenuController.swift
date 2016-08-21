@@ -18,12 +18,26 @@ class MenuController: UIViewController {
     
     private var alert:UIAlertController?
    
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     UIViewController lifecycle
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindView()
         self.showAlert()
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "optionSelectedSegue") {
+            let gameVC = segue.destinationViewController as! GameController
+            gameVC.person = self.selectedPerson
+            self.selectedPerson = nil
+            
+        }
     }
 
     func bindView() {
@@ -43,6 +57,12 @@ class MenuController: UIViewController {
         }
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Alert view
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     func showAlert() {
         let title = NSLocalizedString("Welcome!", comment: "")
         let message = NSLocalizedString("Choose your character, tap and play! Video in the end will be your gift :)", comment: "")
@@ -55,35 +75,17 @@ class MenuController: UIViewController {
         self.presentViewController(self.alert!, animated: true, completion: nil)
         
     }
-
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        //restore button state
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "optionSelectedSegue") {
-            let gameVC = segue.destinationViewController as! GameController
-            gameVC.person = self.selectedPerson
-            self.selectedPerson = nil
-            
-        }
-    }
-
 }
 
-// MARK: - MenuModelDelegate
+/////////////////////////////////////////////////////////////////////////////////////////
+//<----------------------------------------------------------------------------------->//
+// MARK: -                     MenuModelDelegate
+//<----------------------------------------------------------------------------------->//
+/////////////////////////////////////////////////////////////////////////////////////////
+
 extension MenuController: MenuModelDelegate {
+    
     // MenuModelDelegate methods
     func modelDidStartActivity(model: MenuModel) {
         print("started")
@@ -93,7 +95,14 @@ extension MenuController: MenuModelDelegate {
         self.menuView!.collectionView.reloadData()
         
     }
+    
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//<----------------------------------------------------------------------------------->//
+// MARK: -                     UICollectionViewDataSource
+//<----------------------------------------------------------------------------------->//
+/////////////////////////////////////////////////////////////////////////////////////////
 
 extension MenuController: UICollectionViewDataSource {
     
@@ -116,10 +125,14 @@ extension MenuController: UICollectionViewDataSource {
             return MenuCell()
         }
     }
-    
-   
-    
+
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//<----------------------------------------------------------------------------------->//
+// MARK: -                     UICollectionViewDelegate
+//<----------------------------------------------------------------------------------->//
+/////////////////////////////////////////////////////////////////////////////////////////
 
 extension MenuController: UICollectionViewDelegate {
 
@@ -147,6 +160,12 @@ extension MenuController: UICollectionViewDelegate {
     
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
+//<----------------------------------------------------------------------------------->//
+// MARK: -                     MenuLayoutDelegate
+//<----------------------------------------------------------------------------------->//
+/////////////////////////////////////////////////////////////////////////////////////////
+
 extension MenuController: MenuLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -156,6 +175,7 @@ extension MenuController: MenuLayoutDelegate {
         
         return CGSizeMake(cellWidth, cellHeight)
     }
+    
 }
 
 

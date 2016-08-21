@@ -30,7 +30,7 @@ class MenuLayout: UICollectionViewFlowLayout {
     }
     
     override func prepareLayout() {
-        // 1
+      
         if cache.isEmpty {
 
             for item in 0 ..< collectionView!.numberOfItemsInSection(0) {
@@ -75,6 +75,5 @@ class MenuLayout: UICollectionViewFlowLayout {
         }
         return layoutAttributes
     }
-    
-    
+
 }

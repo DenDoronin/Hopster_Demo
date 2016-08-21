@@ -18,6 +18,12 @@ class VideoController: UIViewController {
     private var alert:UIAlertController?
     private var playerController: AVPlayerViewController?
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     UIViewController lifecycle
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +40,20 @@ class VideoController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    /// Create player, add observers for events
+    deinit {
+        //remove observers
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        self.playerController?.player!.removeObserver(self, forKeyPath: "rate", context: nil)
+        
+    }
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     AVPlayer
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
+    /// Create player, add observers for events
     func setupPlayer() {
         
         let videoURL = NSURL(string:(self.person?.streamingLink)!)
@@ -82,7 +100,6 @@ class VideoController: UIViewController {
         self.showAlert(title, message: message)
     }
     
-    
     /// observer for rate field - in order to handle play/pause event for updating ui
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         guard keyPath != nil else {
@@ -128,6 +145,12 @@ class VideoController: UIViewController {
         return kCMTimeInvalid
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Alert view
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     func showAlert(title: String, message: String) {
         let okTitle = NSLocalizedString("Let's watch again", comment: "")
         let cancelTitle = NSLocalizedString("No, return to the menu", comment: "")
@@ -148,19 +171,6 @@ class VideoController: UIViewController {
         }))
         
         self.presentViewController(self.alert!, animated: true, completion: nil)
-        
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    deinit {
-        //remove observers
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        self.playerController?.player!.removeObserver(self, forKeyPath: "rate", context: nil)
         
     }
         

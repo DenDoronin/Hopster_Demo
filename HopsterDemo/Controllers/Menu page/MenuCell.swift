@@ -27,5 +27,4 @@ class MenuCell: UICollectionViewCell {
         }
     }
 
-    
 }

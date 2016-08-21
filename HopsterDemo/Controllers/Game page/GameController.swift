@@ -18,18 +18,41 @@ class GameController: UIViewController {
     private var actionSheet : UIAlertController?
     private var alert:UIAlertController?
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     UIViewController lifecycle
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         self.gameView.decorate()
         self.showAlert()
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "playVideoSegue") {
+            let videoVC = segue.destinationViewController as! VideoController
+            videoVC.person = self.person
+            
+        }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Alert view
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     func showAlert() {
-        let title = NSLocalizedString("Welcome", comment: "")
+        let title = NSLocalizedString("Nice :)", comment: "")
         let message = NSLocalizedString("Catch all bricks and watch video!", comment: "")
         let okTitle = NSLocalizedString("Let's start", comment: "")
         let cancelTitle = NSLocalizedString("No, I think next time", comment: "")
@@ -53,19 +76,11 @@ class GameController: UIViewController {
 
     }
     
-    func setupEventHandlers() {
-        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameController.swipeLeft(_:)))
-        swipeLeft.direction = .Left
-        self.gameView.arcRenderer!.addGestureRecognizer(swipeLeft)
-        
-        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameController.swipeRight(_:)))
-        swipeRight.direction = .Right
-        self.gameView.arcRenderer!.addGestureRecognizer(swipeRight)
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerDidWin), name:arcanoidAEPlayerDidWin, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerDidFail), name: arcanoidAEPlayerDidFail, object: nil)
-    }
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Game scene lifecycle
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
     
     func playerDidWin() {
         guard self.actionSheet == nil else {
@@ -140,6 +155,25 @@ class GameController: UIViewController {
 
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Events  handle
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
+    func setupEventHandlers() {
+        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameController.swipeLeft(_:)))
+        swipeLeft.direction = .Left
+        self.gameView.arcRenderer!.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameController.swipeRight(_:)))
+        swipeRight.direction = .Right
+        self.gameView.arcRenderer!.addGestureRecognizer(swipeRight)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerDidWin), name:arcanoidAEPlayerDidWin, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerDidFail), name: arcanoidAEPlayerDidFail, object: nil)
+    }
     
     func swipeLeft(sender:UISwipeGestureRecognizer){
         NSLog("HP_Demo-[iOS] - swipe left")
@@ -156,22 +190,4 @@ class GameController: UIViewController {
         self.gameScene?.stop()
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        
-    }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "playVideoSegue") {
-            let videoVC = segue.destinationViewController as! VideoController
-            videoVC.person = self.person
-            
-        }
-    }
-
 }

@@ -12,6 +12,12 @@ class ArcanoidPE: PhysicsEngine {
 
     var ballObject : Ball?
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Game scene main update method
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     override func update() {
         //override this method and handle base physics for your game world
         for gameObject in self.objectManager!.objects {
@@ -40,6 +46,12 @@ class ArcanoidPE: PhysicsEngine {
         }
         
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Game scene obects physics
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
     
     func handleBall(ball: Ball) {
         self.ballObject = ball
@@ -105,12 +117,6 @@ class ArcanoidPE: PhysicsEngine {
                 self.ballObject!.physicsObject.velocity.x *= -1
             }
             
-//            if (ballRect.origin.x > brickRect.origin.x  &&
-//                ballRect.origin.x + ballRect.size.width < brickRect.origin.x + brickRect.size.width) {
-//                self.ballObject!.physicsObject.velocity.y *= -1
-//            }
-            
-            
             if (ballRect.origin.y + ballRect.size.height >= brickRect.origin.y &&
                 ballRect.origin.y <= brickRect.origin.y) {
                 self.ballObject!.physicsObject.velocity.y *= -1
@@ -120,12 +126,6 @@ class ArcanoidPE: PhysicsEngine {
                 ballRect.origin.y + ballRect.size.height >= brickRect.origin.y + brickRect.size.height) {
                 self.ballObject!.physicsObject.velocity.y *= -1
             }
-            
-//            if (ballRect.origin.y > brickRect.origin.y  &&
-//                ballRect.origin.y + ballRect.size.height < brickRect.origin.y + brickRect.size.height) {
-//                self.ballObject!.physicsObject.velocity.x *= -1
-//            }
-
             
         }
     }

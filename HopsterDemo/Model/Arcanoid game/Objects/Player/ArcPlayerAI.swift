@@ -17,6 +17,5 @@ class ArcPlayerAI: AIObject {
     override func canMoveRight() -> Bool {
         return true
     }
-
     
 }

@@ -12,6 +12,12 @@ class ArcRenderer: UIView,GameSceneRenderDelegate {
 
     weak var objectManager : GameObjectsManager?
     
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Assets lazy loading
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     lazy var imgPlayer: UIImage = {
         var tmpPlayer: UIImage = UIImage(named: "arcPlayer")!
         return tmpPlayer
@@ -35,8 +41,12 @@ class ArcRenderer: UIView,GameSceneRenderDelegate {
         return imgBall
     }()
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     Game scene render
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
     override func drawRect(rect: CGRect) {
         // Drawing code
         guard objectManager != nil else {

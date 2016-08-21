@@ -10,18 +10,9 @@ import UIKit
 
 class VideoView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
     @IBOutlet weak var playerContainer: UIView!
     @IBOutlet weak var playerProgress: UIProgressView!
     @IBOutlet weak var playerPause: UIImageView!
-
 
     func decorate () {
         self.backgroundColor = UIColor.redColor()
@@ -36,7 +27,6 @@ class VideoView: UIView {
         self.sendSubviewToBack(imageView)
         
         let views = ["imageView":imageView]
-        
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "H:|[imageView]|",
