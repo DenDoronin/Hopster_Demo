@@ -65,6 +65,42 @@ class MenuModel: NSObject {
         self.operationQueue.addOperation(downloadOp)
 
     }
+    /////////////////////////////////////////////////////////////////////////////////////////
+    //<----------------------------------------------------------------------------------->//
+    // MARK: -                     DataSource methods
+    //<----------------------------------------------------------------------------------->//
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
+    /// this group is ideal for Unit Tests
+    
+    func resourcesArray(plistName:String) -> NSArray? {
+        var personsArray: NSArray?
+        if let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist") {
+            personsArray = NSArray(contentsOfFile: path)
+        }
+        return personsArray
+    }
+    
+    func parsePerson(persDict: AnyObject) -> GamePerson? {
+        let name = persDict["name"] as! String
+        let thumbURL = persDict["thumbnail"] as! String
+        let link = persDict["streaming"] as! String
+        
+        let person = GamePerson(aName: name, aThumURL: thumbURL, aLink: link)
+        return person
+    }
+    
+    func parseResources(personsArray: NSArray?) {
+        if let persons = personsArray {
+            // Use your dict here
+            for persDict in persons {
+                if let person = self.parsePerson(persDict)
+                {
+                    self.objects.append(person)
+                }
+            }
+        }
+    }
     
     /////////////////////////////////////////////////////////////////////////////////////////
     //<----------------------------------------------------------------------------------->//
@@ -91,32 +127,20 @@ class MenuModel: NSObject {
         
     }
     
-    func fetchOperation(plistName:String) -> NSOperation {
+    private func fetchOperation(plistName:String) -> NSOperation {
         let fetchOp :NSOperation = NSBlockOperation {[weak self] in
             
             guard let strongSelf = self else { return }
             
-            var personsArray: NSArray?
-            if let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist") {
-                personsArray = NSArray(contentsOfFile: path)
-            }
-            if let persons = personsArray {
-                // Use your dict here
-                for persDict in persons {
-                    let name = persDict["name"] as! String
-                    let thumbURL = persDict["thumbnail"] as! String
-                    let link = persDict["streaming"] as! String
-                    
-                    let person = GamePerson(aName: name, aThumURL: thumbURL, aLink: link)
-                    strongSelf.objects.append(person)
-                    
-                }
-            }
+            let personsArray: NSArray? = strongSelf.resourcesArray(plistName)
+
+            strongSelf.parseResources(personsArray)
+            
         }
         return fetchOp
     }
     
-    func downloadAllOperationWithDependency(op: NSOperation) -> NSOperation {
+    private func downloadAllOperationWithDependency(op: NSOperation) -> NSOperation {
         let downloadOp :NSOperation = NSBlockOperation {[weak self] in
             guard let strongSelf = self else { return }
             strongSelf.downloadContent()
@@ -126,7 +150,7 @@ class MenuModel: NSObject {
         return downloadOp
     }
     
-    func downloadImageOperation(person:GamePerson) -> NSOperation {
+    private func downloadImageOperation(person:GamePerson) -> NSOperation {
         let downloadOp :NSOperation = NSBlockOperation {[weak person] in
             
             guard let strongPerson = person else { return }
@@ -144,7 +168,7 @@ class MenuModel: NSObject {
 
     }
     
-    func notifyOperation() -> NSOperation {
+    private func notifyOperation() -> NSOperation {
         let downloadOp :NSOperation = NSBlockOperation {[weak self] in
             guard let strongSelf = self else { return }
             strongSelf.finishActivity()

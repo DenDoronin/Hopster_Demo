@@ -46,6 +46,11 @@
 		81BFEA7B1D69C2E7009F90E4 /* GamePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */; };
 		81BFEA7D1D69E9F9009F90E4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7C1D69E9F9009F90E4 /* MenuCell.swift */; };
 		81BFEA7F1D69F3AC009F90E4 /* MenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7E1D69F3AC009F90E4 /* MenuLayout.swift */; };
+		81BFEA811D6ACBF7009F90E4 /* HDResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA801D6ACBF7009F90E4 /* HDResourcesTest.swift */; };
+		81BFEA821D6ACC24009F90E4 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137480B1D661C230022CF92 /* MenuModel.swift */; };
+		81BFEA831D6ACD22009F90E4 /* GamePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */; };
+		81BFEA841D6AD8A5009F90E4 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137480B1D661C230022CF92 /* MenuModel.swift */; };
+		81BFEA851D6AD8A8009F90E4 /* GamePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29771AF4E7DF5FEECAE8BCBC /* Pods-HopsterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopsterDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HopsterDemo/Pods-HopsterDemo.release.xcconfig"; sourceTree = "<group>"; };
 		813747A11D64E44D0022CF92 /* HopsterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopsterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813747A41D64E44D0022CF92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		813747A91D64E44D0022CF92 /* HopsterDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HopsterDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -112,8 +116,7 @@
 		81BFEA7A1D69C2E7009F90E4 /* GamePerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePerson.swift; path = "Controllers/Menu page/GamePerson.swift"; sourceTree = "<group>"; };
 		81BFEA7C1D69E9F9009F90E4 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = "Controllers/Menu page/MenuCell.swift"; sourceTree = "<group>"; };
 		81BFEA7E1D69F3AC009F90E4 /* MenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLayout.swift; path = "Controllers/Menu page/MenuLayout.swift"; sourceTree = "<group>"; };
-		9F9EF8050FCA1DDB32EE8FE1 /* Pods-HopsterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopsterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HopsterDemo/Pods-HopsterDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		E027B00B59517C5C0C67525F /* Pods_HopsterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopsterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BFEA801D6ACBF7009F90E4 /* HDResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDResourcesTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				8137488C1D688E910022CF92 /* AVFoundation.framework */,
-				E027B00B59517C5C0C67525F /* Pods_HopsterDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,6 +193,7 @@
 		813747B81D64E44D0022CF92 /* HopsterDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				81BFEA801D6ACBF7009F90E4 /* HDResourcesTest.swift */,
 				813747B91D64E44D0022CF92 /* HopsterDemoTests.swift */,
 				813747BB1D64E44D0022CF92 /* Info.plist */,
 			);
@@ -358,8 +361,6 @@
 		8F6489A6B48B0DD48F4843C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F9EF8050FCA1DDB32EE8FE1 /* Pods-HopsterDemo.debug.xcconfig */,
-				29771AF4E7DF5FEECAE8BCBC /* Pods-HopsterDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -589,7 +590,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BFEA831D6ACD22009F90E4 /* GamePerson.swift in Sources */,
 				813747BA1D64E44D0022CF92 /* HopsterDemoTests.swift in Sources */,
+				81BFEA811D6ACBF7009F90E4 /* HDResourcesTest.swift in Sources */,
+				81BFEA821D6ACC24009F90E4 /* MenuModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +601,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BFEA841D6AD8A5009F90E4 /* MenuModel.swift in Sources */,
 				813747C51D64E44D0022CF92 /* HopsterDemoUITests.swift in Sources */,
+				81BFEA851D6AD8A8009F90E4 /* GamePerson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
